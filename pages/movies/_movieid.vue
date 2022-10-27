@@ -17,32 +17,32 @@
             <p class="mt-3 text-xl leading-normal italic">
                 <span class="font-semibold semibold">Tagline:</span>"{{movie.tagline}}"
             </p>
-            <!--
-            <p class="text-14 font-medium">
+            
+            <p v-if="movie.release_date " class="text-14 font-medium">
                 <span>Released:</span>
                 {{
-                new Date(movie.release_date).toLocaleString('en-us', {
+                new Date(movie.release_date).toLocaleString('cz-cs', {
                   month: 'long',
                   day: 'numeric',
                   year: 'numeric',
                 })
                 }}
             </p>
-            -->
+            
             <p class="mt-3 text-xl leading-normal">
                 <span>Duration:</span> {{movie.runtime}} minutes
             </p>
-            <!--
-            <p class="mt-3 text-xl leading-normal">
+            
+            <p v-if="movie.revenue" class="mt-3 text-xl leading-normal">
                 <span>Revenue:</span>
                 {{
                 movie.revenue.toLocaleString('en-us', {
                 style: 'currency',
-                currency: 'USD',
+                currency: 'EUR',
                 })
                 }}
             </p>
-        -->
+
             <p class="mt-3 text-xl leading-normal">
                 <span>Overview:</span>{{ movie.overview }}
             </p>
